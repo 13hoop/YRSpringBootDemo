@@ -1,0 +1,19 @@
+#file: noinspection SpringBootApplicationYaml
+# 应用服务 WEB 访问端口
+server:
+  port: 8080
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo0314?serverTimezone=UTC
+    username: root
+    password: saloonyr
+#  main:
+#    banner-mode: off
+
+# mybatis-plus 配置
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
