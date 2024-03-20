@@ -61,9 +61,6 @@ class Mybatisplus01QuickstartApplicationTests {
         qw.lambda().like(Member::getEmail, "@outlook");
         List<Member> list = memberDao.selectList(qw);
         System.out.println(list);
-
-        LambdaQueryWrapper<Member> lqw = new LambdaQueryWrapper<>();
-        lqw.
     }
 
     @Test
@@ -72,6 +69,4 @@ class Mybatisplus01QuickstartApplicationTests {
 
         // 2 查询投影demo
     }
-
-
 }

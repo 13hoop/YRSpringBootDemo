@@ -4,13 +4,18 @@ server:
   port: 8080
 
 spring:
+  http:
+    converters:
+      preferred-json-mapper: fastjson2
+# 数据库连接池配置
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/demo0314?serverTimezone=UTC
     username: root
     password: saloonyr
-#  main:
+  main:
+    log-startup-info: true
 #    banner-mode: off
 
 # mybatis-plus 配置
