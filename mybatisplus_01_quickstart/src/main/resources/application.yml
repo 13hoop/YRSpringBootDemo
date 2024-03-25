@@ -16,9 +16,27 @@ spring:
     password: saloonyr
   main:
     log-startup-info: true
+
+
+# 日志配置
+logging:
+  level:
+    root: info
+  #    org:
+#      springframework:
+  # 日志输出文件
+#  file:
+#    path:
+
+  # 日志样式
+  pattern:
+    console: '%d{MM-dd HH:mm:ss.SSS}%5level [%thread] %logger{15} - %msg%n%highlight(%-5level)'
+
 #    banner-mode: off
 
 # mybatis-plus 配置
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  # mapper配置地址
+  mapper-locations: classpath:mapper/*.xml
