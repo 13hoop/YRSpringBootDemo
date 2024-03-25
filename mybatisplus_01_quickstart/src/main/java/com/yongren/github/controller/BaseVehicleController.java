@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/vehicle")
 public class BaseVehicleController {
@@ -16,8 +18,19 @@ public class BaseVehicleController {
     @Autowired
     private VehicleDao vehicleDao;
 
+    @RequestMapping("/list")
+    public String findAll() {
+
+        List<Vehicle> vehicles = vehicleDao.selectList(null);
+        ResposeEntity rsp = new ResposeEntity();
+        rsp.setCode(0);
+        rsp.setMessage("success");
+        rsp.setData(vehicles);
+        return JSON.toJSONString(rsp);
+    }
 
     // 这里如何让参数自动装填 即 JSON.parseObject(value, Vehicle.class) ?
+    // 直接返回ResposeEntity目前不行, 如何处理 ?
     @RequestMapping("/addObject")
     public ResposeEntity addVehicleObject(@RequestBody Vehicle vehicle) {
 //        Vehicle newVehicle = new Vehicle();

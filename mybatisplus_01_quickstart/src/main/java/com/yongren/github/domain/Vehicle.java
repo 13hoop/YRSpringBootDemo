@@ -46,4 +46,15 @@ public class Vehicle {
     // 额外数组, 表中不存在
     @TableField(exist = false)
     private BigDecimal price;
+
+    // 车辆状态: 1 默认(上架未发布) 2 发布 3 下架
+    private int status;
+
+    // 是否展示: 1为展示, 0为隐藏
+    @TableField(value = "is_display")
+    private int isDisplay;
+
+    // 关联能力项
+    @TableField(value = "ref_function")
+    private int refFunction;
 }
