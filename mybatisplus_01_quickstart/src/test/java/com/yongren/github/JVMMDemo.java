@@ -3,14 +3,15 @@ package com.yongren.github;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutionException;
 
 public class JVMMDemo {
 
     public static void main(String[] args) {
         orderEnumDemo();
 //        orderDemo();
-
     }
 
     /**
@@ -142,10 +143,7 @@ public class JVMMDemo {
             throw new RuntimeException(e);
         }
         System.out.println(" === done ===");
-
-
     }
-
 }
 
 class Singleton {

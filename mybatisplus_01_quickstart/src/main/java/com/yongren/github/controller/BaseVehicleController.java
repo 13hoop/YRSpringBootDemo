@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 @RestController
 @RequestMapping("/vehicle")
@@ -20,7 +21,6 @@ public class BaseVehicleController {
 
     @RequestMapping("/list")
     public String findAll() {
-
         List<Vehicle> vehicles = vehicleDao.selectList(null);
         ResposeEntity rsp = new ResposeEntity();
         rsp.setCode(0);
