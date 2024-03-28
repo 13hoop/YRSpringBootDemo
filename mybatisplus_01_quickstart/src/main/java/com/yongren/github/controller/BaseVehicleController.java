@@ -29,9 +29,24 @@ public class BaseVehicleController {
         return JSON.toJSONString(rsp);
     }
 
-    // 这里如何让参数自动装填 即 JSON.parseObject(value, Vehicle.class) ?
-    // 直接返回ResposeEntity目前不行, 如何处理 ?
-    @RequestMapping("/addObject")
+    @RequestMapping(value = "/list2")
+    @ResponseBody
+    public ResposeEntity findAllEntity() {
+        List<Vehicle> vehicles = vehicleDao.selectList(null);
+        ResposeEntity rsp = new ResposeEntity();
+        rsp.setCode(0);
+        rsp.setMessage("success");
+        rsp.setData(vehicles);
+        return rsp;
+    }
+
+    // 01 这里如何让参数自动装填成对象, 即替代 JSON.parseObject(value, Vehicle.class) 和 参数中自动装配为 对象?
+    // 02 直接返回 ResposeEntity 目前不行, 如何处理 ?
+    // 03 错误处理 ? 拦截器 ?
+    // 04 context如何scan到有那些bean的 ? 在classpath目录下具体扫描后加载的过程 ?
+
+//    @RequestMapping("/addObject")
+    @PostMapping(value = "/addObject")
     public ResposeEntity addVehicleObject(@RequestBody Vehicle vehicle) {
 //        Vehicle newVehicle = new Vehicle();
 //        newVehicle = vehicle;

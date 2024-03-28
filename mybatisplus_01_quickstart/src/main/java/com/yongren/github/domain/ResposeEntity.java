@@ -1,12 +1,18 @@
 package com.yongren.github.domain;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
-public class ResposeEntity {
+@AllArgsConstructor
+@ToString
+public class ResposeEntity implements Serializable {
     // 数据体
     private Object data;
     // code: 0 表示成功

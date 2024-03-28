@@ -35,9 +35,6 @@
             <version>2.0.46</version>
         </dependency>
 
-
-
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -74,6 +71,14 @@
                     <artifactId>spring-boot-starter-json</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!--        单独引入, databind, 否则spring会失去将请求参数和返回值自动json转化的失效 -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <optional>true</optional>
+            <version>2.9.8</version>
         </dependency>
 
         <dependency>

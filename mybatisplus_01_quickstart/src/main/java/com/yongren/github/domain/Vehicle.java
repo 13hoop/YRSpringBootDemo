@@ -8,13 +8,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /// 车辆表格
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Vehicle {
+//@NoArgsConstructor
+//@AllArgsConstructor
+public class Vehicle implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private int id;
     private String name;

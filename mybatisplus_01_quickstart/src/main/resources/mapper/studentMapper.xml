@@ -10,4 +10,8 @@
     <select id="findById" resultType="com.yongren.github.domain.Student">
         select * from student where id = #{id}
     </select>
+    
+    <select id="queryAllFunction" resultType="com.yongren.github.domain.VehicleFuction">
+        select * from vehicle_funtion;
+    </select>
 </mapper>

@@ -21,7 +21,7 @@ spring:
 # 日志配置
 logging:
   level:
-    root: info
+    root: debug
   #    org:
 #      springframework:
   # 日志输出文件
